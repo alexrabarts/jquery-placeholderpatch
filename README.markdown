@@ -10,8 +10,8 @@ The value is taken from the input's label by default.  The label is
 positioned off-screen to remain accessible:
 
   <pre>
-    <label for="myInput">The label text</label>
-    <input id="myInput" type="text" />
+    &lt;label for="myInput">The label text&lt;/label&gt;
+    &lt;input id="myInput" type="text" /&gt;
 
     $('#myInput').clearingInput(); // Input value will be 'The label text'
   </pre>
@@ -20,10 +20,10 @@ If there is no label associated with the input (or if the label wraps the
 input) then the value of the input is used as the text:
 
   <pre>
-    <label>
+    &lt;label&gt;
       My input
-      <input id="myInput" type="text" value="The input text" />
-    </label>
+      &lt;input id="myInput" type="text" value="The input text" /&gt;
+    &lt;/label&gt;
 
     $('#myInput').clearingInput(); // Input value will be 'The input text'
   </pre>
@@ -31,8 +31,8 @@ input) then the value of the input is used as the text:
 If there is a label but you want to explicitly set the input text:
 
   <pre>
-    <label for="myInput">The label text</label>
-    <input id="myInput" type="text" value="The input text" />
+    &lt;label for="myInput"&gt;The label text&lt;/label&gt;
+    &lt;input id="myInput" type="text" value="The input text" /&gt;
 
     $('#myInput').clearingInput({text: 'Custom text'}); // Value will be 'Custom text'
     // or
