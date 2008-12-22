@@ -1,8 +1,8 @@
 # clearingInput: a jQuery plugin
 
-clearingInput is a simple jQuery plugin that provides example text inside
-text inputs that automatically clears when the input is focused.  Common
-uses are for a hint/example, or as a label when space is limited.
+clearingInput is a simple jQuery plugin that provides example/label text
+inside text inputs that automatically clears when the input is focused.
+Common uses are for a hint/example, or as a label when space is limited.
 
 ## Usage
 
