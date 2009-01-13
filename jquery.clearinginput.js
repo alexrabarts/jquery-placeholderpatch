@@ -15,7 +15,7 @@
  *
  * @author   Alex Rabarts (alexrabarts -at- gmail -dawt- com)
  * @requires jQuery v1.2 or later
- * @version  0.1
+ * @version  0.1.1
  */
 
 (function ($) {
@@ -27,7 +27,7 @@
 
       return this.each(function () {
         var input = $(this).addClass(options.blurClass);
-        var form  = input.parents('form:first()');
+        var form  = input.parents('form:first');
         var label, text;
 
         text = options.text || textFromLabel() || input.val();
