@@ -4,6 +4,8 @@ clearingInput is a simple jQuery plugin that provides example/label text
 inside text inputs that automatically clears when the input is focused.
 Common uses are for a hint/example, or as a label when space is limited.
 
+See full documentation at <a href="http://alexrabarts.github.com/jquery-clearinginput/">http://alexrabarts.github.com/jquery-clearinginput/</a>.
+
 ## Usage
 
 The value is taken from the input's label by default.  The label is
