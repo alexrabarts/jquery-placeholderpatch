@@ -15,7 +15,7 @@
  *
  * @author   Alex Rabarts (alexrabarts -at- gmail -dawt- com)
  * @requires jQuery v1.2 or later
- * @version  0.1.1
+ * @version  0.1.2
  */
 
 (function ($) {
@@ -37,7 +37,7 @@
 
           input.blur(function () {
             if (input.val() === '') {
-              input.val(text).addClass(options.blurClass);
+              input.addClass(options.blurClass).val(text);
             }
           }).focus(function () {
             if (input.val() === text) {
