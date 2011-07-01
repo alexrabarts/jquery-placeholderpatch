@@ -1,3 +1,7 @@
+=== 0.2 / 2011-07-01
+
+* Added option to clear input on hover
+
 === 0.1.2 / 2009-06-26
 
 * Fix flash of unstyled content when the blur class is applied

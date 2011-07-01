@@ -36,13 +36,15 @@
       <input type="text" id="input5" />
 
       <input type="text" id="input6" value="Custom blur class" />
+
+      <input type="text" id="input7" value="Clear on hover" />
     </form>
   </div>
 
   <script type="text/javascript">
     //<![CDATA[
     (function ($) {
-      var form, label1, label2, label3, input1, input2, input3, input4, input5, input6;
+      var form, label1, label2, label3, input1, input2, input3, input4, input5, input6, input7;
 
       module('Core', {
         setup: function () {
@@ -56,6 +58,7 @@
           input4.clearingInput({text: input4.val()});
           input5 = $('#input5').clearingInput({text: 'Custom text'});
           input6 = $('#input6').clearingInput({blurClass: 'customBlurClass'});
+          input7 = $('#input7').clearingInput({clearOnHover: true});
           form   = $('#form').submit(function (e) { e.preventDefault(); return false; });
         }
       });
@@ -105,10 +108,11 @@
         ok(input1.val() === '', 'Default value cleared');
       });
 
-      test('Input should not be cleared on submit if not default value', function () {
-        input1.val('Baz').focus();
-        form.submit();
-        ok(input1.val() === 'Baz', 'New value was not cleared');
+      test('Input should clear on hover if option is set', function () {
+        input7.trigger('mouseenter');
+        ok(input7.val() !== 'Clear on hover', 'Value was cleared');
+        input7.trigger('mouseleave');
+        ok(input7.val() === 'Clear on hover', 'Value was uncleared');
       });
     })(jQuery);
     //]]>

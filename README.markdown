@@ -4,8 +4,6 @@ clearingInput is a simple jQuery plugin that provides example/label text
 inside text inputs that automatically clears when the input is focused.
 Common uses are for a hint/example, or as a label when space is limited.
 
-See full documentation at <a href="http://alexrabarts.github.com/jquery-clearinginput/">http://alexrabarts.github.com/jquery-clearinginput/</a>.
-
 ## Usage
 
 The value is taken from the input's label by default.  The label is
@@ -46,6 +44,12 @@ Note that a limitation of using the input's own value for the text is that the
 value may be overwritten with the last submitted value if the user uses the
 back button.  For this reason, using the input's own value is discouraged.
 
+You can optionally clear the input on hover:
+
+<pre>
+  $('#myInput').clearingInput({clearOnHover: true});
+</pre>
+
 You probably want to add a style to your CSS for the blurred state:
 
 <pre>
@@ -63,4 +67,4 @@ Customise the class applied to the input when blurred:
 Licensed under the MIT:
 http://www.opensource.org/licenses/mit-license.php
 
-Copyright (c) 2008 Stateless Systems (http://statelesssystems.com)
+Copyright (c) 2011 Stateless Systems (http://statelesssystems.com)
