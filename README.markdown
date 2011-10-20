@@ -1,3 +1,15 @@
+# DEPRECATION WARNING
+
+Please note, this plugin has not been under active development since the HTML5
+<code>placeholder</code> attribute was introduced.  If you wish to support this
+attribute in older browsers, the following snippet of code will achieve that
+for you:
+
+https://gist.github.com/379601
+
+Alternatively, there are several other jQuery plugins available that add
+support for the <code>placeholder</code> attribute.
+
 # clearingInput: a jQuery plugin
 
 clearingInput is a simple jQuery plugin that provides example/label text
