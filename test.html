@@ -1,6 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
 <head>
   <title>JavaScript unit test file</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -8,12 +6,12 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js" type="text/javascript"></script>
   <script src="http://dev.jquery.com/view/trunk/qunit/testrunner.js" type="text/javascript"></script>
 
-  <script src="jquery.clearinginput.js" type="text/javascript"></script>
+  <script src="jquery.placeholder.js" type="text/javascript"></script>
 
   <link rel="stylesheet" href="http://dev.jquery.com/view/trunk/qunit/testsuite.css" type="text/css" media="screen" />
 </head>
 <body>
-  <h1>jquery.clearinginput.js tests</h1>
+  <h1>jquery.placeholder.js tests</h1>
   <h2 id="banner"></h2>
   <h2 id="userAgent"></h2>
 
@@ -21,74 +19,37 @@
 
   <div id="main">
     <form action="#" id="form">
-      <label for="input1" id="label1">Label Foo</label>
-      <input type="text" id="input1" />
-
-      <label for="input2" id="label2">Label Bar</label>
-      <input type="text" id="input2" value="Bar" />
-
-      <label for="input3" id="label3">Label Baz</label>
-      <input type="text" id="input3" value="Baz" />
-
-      <label for="input4" id="label4">Label Zap</label>
-      <input type="text" id="input4" value="Zap" />
-
-      <input type="text" id="input5" />
-
-      <input type="text" id="input6" value="Custom blur class" />
-
-      <input type="text" id="input7" value="Clear on hover" />
+      <input type="text" id="input1" placeholder="Foo" />
+      <input type="text" id="input2" value="Foo" placeholder="Bar" />
+      <input type="text" id="input3" placeholder="Foo" />
     </form>
   </div>
 
   <script type="text/javascript">
     //<![CDATA[
     (function ($) {
-      var form, label1, label2, label3, input1, input2, input3, input4, input5, input6, input7;
+      var form, label1, label2, label3;
 
       module('Core', {
         setup: function () {
-          label1 = $('#label1').clearingInput();
-          label2 = $('#label2').clearingInput();
-          label3 = $('#label3').clearingInput();
-          input1 = $('#input1').clearingInput();
-          input2 = $('#input2').clearingInput();
-          input3 = $('#input3').clearingInput();
-          input4 = $('#input4');
-          input4.clearingInput({text: input4.val()});
-          input5 = $('#input5').clearingInput({text: 'Custom text'});
-          input6 = $('#input6').clearingInput({blurClass: 'customBlurClass'});
-          input7 = $('#input7').clearingInput({clearOnHover: true});
+          input1 = $('#input1').placeholder();
+          input2 = $('#input2').placeholder();
+          input3 = $('#input3').placeholder({placeholderClass: 'customPlaceholderClass'});
           form   = $('#form').submit(function (e) { e.preventDefault(); return false; });
         }
       });
 
-      test('Input with no value should initially have value from label', function () {
-        ok(input1.val() === 'Label Foo', 'Value is taken from label');
+      test('Empty input should take value from placeholder attribute', function () {
+        ok(input1.val() === 'Foo', 'Value is taken from placeholder attribute');
       });
 
-      test('Input with a value should initially have value from label', function () {
-        ok(input2.val() === 'Label Bar', 'Value is taken from label');
+      test('Input with a value and placeholder attribute should retain its value', function () {
+        ok(input2.val() === 'Foo', 'Value is taken from value attribute');
       });
 
-      test('Input should initially have value from value attribute', function () {
-        ok(input4.val() === 'Zap', 'Value taken from value attribute');
-      });
-
-      test('Input should have value from optional argument', function () {
-        ok(input5.val() === 'Custom text', 'Value is taken from the optional argument');
-      });
-
-      test('Label should be positioned off-screen', function () {
-        ok(
-          label1.css('position') === 'absolute' && label1.css('left') === '-9999px',
-          'Label is positioned off-screen'
-        );
-      });
-
-      test('Input should initially have blur class', function () {
-        ok(input1.hasClass('blur'),            'Input has default blur class');
-        ok(input6.hasClass('customBlurClass'), 'Input has custom blur class');
+      test('Empty input should initially have placeholder class', function () {
+        ok(input1.hasClass('placeholder'),            'Input has default placeholder class');
+        ok(input3.hasClass('customPlaceholderClass'), 'Input has custom placeholder class');
       });
 
       test('Input should clear on focus', function () {
@@ -96,23 +57,16 @@
         ok(input1.val() === '', 'Input cleared on focus');
       });
 
-      test('Input should not have blur class on focus', function () {
+      test('Input should not have placeholder class on focus', function () {
         input1.focus();
-        ok(!input1.hasClass('blur'),            'Input does not have default blur class on focus');
-        input6.focus();
-        ok(!input6.hasClass('customBlurClass'), 'Input does not have custom blur class on focus');
+        ok(!input1.hasClass('placeholder'),            'Input does not have default placeholder class on focus');
+        input3.focus();
+        ok(!input3.hasClass('customPlaceholderClass'), 'Input does not have custom placeholder class on focus');
       });
 
       test('Input should be cleared on submit if default value', function () {
         form.submit();
         ok(input1.val() === '', 'Default value cleared');
-      });
-
-      test('Input should clear on hover if option is set', function () {
-        input7.trigger('mouseenter');
-        ok(input7.val() !== 'Clear on hover', 'Value was cleared');
-        input7.trigger('mouseleave');
-        ok(input7.val() === 'Clear on hover', 'Value was uncleared');
       });
     })(jQuery);
     //]]>
