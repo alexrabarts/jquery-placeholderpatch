@@ -1,6 +1,6 @@
-# placeholder: a jQuery plugin
+# placeholderPatch: a jQuery plugin
 
-placeholder is a simple jQuery plugin that provides support for the HTML5
+placeholderPatch is a simple jQuery plugin that provides support for the HTML5
 placeholder attribute in older browsers.
 
 ## Usage

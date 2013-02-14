@@ -1,3 +1,7 @@
+=== 1.0.1 / 2013-02-14
+
+* Renamed to avoid conflict with another jQuery plugin
+
 === 1.0.0 / 2013-02-14
 
 * Added jQuery plugins manifest
