@@ -1,3 +1,7 @@
+=== 1.0.2 / 2013-02-14
+
+* Version bump for jQuery plugins site
+
 === 1.0.1 / 2013-02-14
 
 * Renamed to avoid conflict with another jQuery plugin
