@@ -1,20 +1,9 @@
 /*
  * placeholder: a jQuery plugin
  *
- * placeholder is a simple jQuery plugin that provides support for the
- * HTML5 placeholder attribute in older browsers.
- *
- * For usage and examples, visit:
- * http://github.com/alexrabarts/jquery-placeholder
- *
  * Licensed under the MIT:
  * http://www.opensource.org/licenses/mit-license.php
  *
- * Copyright (c) 2011 Alex Rabarts
- *
- * @author   Alex Rabarts (alexrabarts -at- gmail -dawt- com)
- * @requires jQuery v1.2 or later
- * @version  0.1
  */
 
 (function ($) {

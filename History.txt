@@ -1,3 +1,7 @@
+=== 1.0.0 / 2013-02-14
+
+* Added jQuery plugins manifest
+
 === 0.2 / 2011-07-01
 
 * Added option to clear input on hover
