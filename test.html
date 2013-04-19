@@ -17,19 +17,22 @@
       <input type="text" id="input1" placeholder="Foo" />
       <input type="text" id="input2" value="Foo" placeholder="Bar" />
       <input type="text" id="input3" placeholder="Foo" />
+      <input type="password" id="input4" placeholder="Foo" />
     </form>
   </div>
 
   <script type="text/javascript">
     //<![CDATA[
     (function ($) {
-      var form, label1, label2, label3;
+      var form, input1, input2, input3, input4;
 
       module('Core', {
         setup: function () {
           input1 = $('#input1').placeholder();
           input2 = $('#input2').placeholder();
           input3 = $('#input3').placeholder({placeholderClass: 'customPlaceholderClass'});
+          input4 = $('#input4');
+
           form   = $('#form').submit(function (e) { e.preventDefault(); return false; });
         }
       });
@@ -62,6 +65,12 @@
       test('Input should be cleared on submit if default value', function () {
         form.submit();
         ok(input1.val() === '', 'Default value cleared');
+      });
+
+      test('Should not be applied to password inputs', function () {
+        ok(input4.val() === '', 'Placeholder text empty');
+        input4.focus();
+        ok(input4.val() === '', 'Placeholder text empty after focus');
       });
     })(jQuery);
     //]]>

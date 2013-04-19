@@ -24,6 +24,11 @@ Customise the placeholder class applied to the input:
   $('#myInput').placeholder({placeholderClass: 'customPleaceholderClass'});
 </pre>
 
+## TODO
+
+* Keep label until text is entered in input
+* Support password inputs
+
 # Licensing
 
 Licensed under the MIT:

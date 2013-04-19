@@ -55,5 +55,5 @@
 })(jQuery);
 
 jQuery(document).ready(function ($) {
-  $('[placeholder]').placeholder();
+  $('[placeholder]:not([type="password"])').placeholder();
 });
