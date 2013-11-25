@@ -15,11 +15,13 @@
 
       return this.each(function () {
         var input = $(this).addClass(options.placeholderClass);
-        var form  = input.parents('form:first');
-        var text  = input.val() || input.attr('placeholder');
+        var form = input.parents('form:first');
+        var placeholder = input.attr('placeholder');
 
-        if (text) {
-          input.val(text);
+        if (placeholder) {
+          if (input.val() === '') {
+            input.val(placeholder);
+          }
 
           input.focus(function () {
             clearInput();
@@ -37,7 +39,7 @@
         }
 
         function clearInput() {
-          if (input.val() === text) {
+          if (input.val() === placeholder) {
             input.val('');
           }
 
@@ -46,7 +48,7 @@
 
         function unclearInput() {
           if (input.val() === '') {
-            input.addClass(options.placeholderClass).val(text);
+            input.addClass(options.placeholderClass).val(placeholder);
           }
         }
       });
