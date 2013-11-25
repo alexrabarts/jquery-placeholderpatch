@@ -1,6 +1,6 @@
 {
   "name": "jquery-placeholderpatch",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "title": "jQuery placeholderPatch",
   "author": {
     "name": "Alex Rabarts",
@@ -15,7 +15,7 @@
   "dependencies": {
     "jquery": ">=1.2"
   },
-  "description": "placeholderPatch is a simple jQuery plugin that provides support for the HTML5 placeholder attribute in older browsers.",
+  "description": "placeholderPatch is a simple jQuery polyfill that provides support for the HTML5 placeholder attribute in older browsers.",
   "homepage": "http://github.com/alexrabarts/jquery-placeholderpatch",
   "bugs": "https://github.com/alexrabarts/jquery-placeholder/issues",
   "authors": [
@@ -24,7 +24,8 @@
   "main": "jquery.placeholderpatch.js",
   "keywords": [
     "jquery",
-    "placeholder"
+    "placeholder",
+    "polyfill"
   ],
   "license": "MIT",
   "ignore": [

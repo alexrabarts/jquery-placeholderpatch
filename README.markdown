@@ -1,6 +1,6 @@
 # placeholderPatch: a jQuery plugin
 
-placeholderPatch is a simple jQuery plugin that provides support for the HTML5
+placeholderPatch is a simple jQuery polyfill that provides support for the HTML5
 placeholder attribute in older browsers.
 
 ## Usage
@@ -34,4 +34,4 @@ Customise the placeholder class applied to the input:
 Licensed under the MIT:
 http://www.opensource.org/licenses/mit-license.php
 
-Copyright (c) 2011 Alex Rabarts
+Copyright (c) 2013 Alex Rabarts
